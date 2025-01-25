@@ -16,6 +16,11 @@ app.get('/email', (req, res) => {
   res.send('Email route 🎉 ')
 })
 
+app.get('/sloth2', (req, res) => {
+  sendOfferDetailsEmail();
+  res.send('Real sloth route 🎉 ')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
