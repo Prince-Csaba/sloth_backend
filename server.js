@@ -14,6 +14,10 @@ app.get('/sloth', (req, res) => {
   res.send('Sloth route 🎉 ')
 })
 
+app.get('/test', (req, res) => {
+  res.send('Test route')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
