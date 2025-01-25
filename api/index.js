@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
 const port = 8000
-//const indexRouter = require('../routes/index');
+const indexRouter = require('../routes/index');
 
 const route = express.Router();
 
 //require("./database/connect");
 
-//app.use('/server', indexRouter);
+app.use('/api', indexRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World of Node online2!')
