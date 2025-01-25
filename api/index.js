@@ -1,3 +1,5 @@
+require("dotenv").config({ path: '.env' });
+
 const express = require('express')
 const app = express()
 const port = 8000
@@ -5,7 +7,7 @@ const indexRouter = require('../routes/index');
 
 const route = express.Router();
 
-//require("./database/connect");
+require("../database/connect");
 
 app.use('/api', indexRouter);
 
