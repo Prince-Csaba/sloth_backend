@@ -1,59 +1,42 @@
 const mongoose = require("mongoose");
 
-const tripSchema = new mongoose.Schema({
-  code: {
+const projectSchema = new mongoose.Schema({
+  icon: {
     type: String,
-    required: true
   },
-  date: {
-    type: String
+  name: {
+    type: String,
   },
-  time: {
-    d: String,
-    a: String,
+  description: {
+    type: String,
   },
-  route: {
-    from: String,
-    to: String
+  startDate: {
+    type: String,
   },
-  toAirport: {
+  endDate: {
+    type: String,
+  },
+  progress: {
+    type: Number,
+  },
+  percentage: {
+    type: Number,
+  },
+  priority: {
+    type: String,
+  },
+  active: {
     type: Boolean,
   },
-  seats: {
-    type: Array
+  order: {
+    type: Number,
   },
-  phones: {
-    type: Array
-  },
-  names: {
-    type: Array
-  },
-  positions: {
-    type: [{
-      latitude: Number,
-      longitude: Number
-    }]
-  },
-  driver: {
-    type: String
-  },
-  isFull: {
-    type: Boolean
-  },
-  adminOrder: {
-    type: Array
-  },
-  finalRoute: {
-    type: Array
-  },
-  reminders: {
-    type: Array
-  },
-  sentReminders: {
-    type: Boolean
+  id: {
+    type: Number,
+    unique: true
   }
 });
 
-const Trip = mongoose.model("trip", tripSchema, "trips");
+const Project = mongoose.model("Project", projectSchema);
 
-module.exports = Trip;
+module.exports = Project;

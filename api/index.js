@@ -1,17 +1,16 @@
 const express = require('express')
 const app = express()
 const port = 8000
+//const indexRouter = require('../routes/index');
+
+const route = express.Router();
+
+//require("./database/connect");
+
+//app.use('/server', indexRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello World of Node online!')
-})
-
-app.get('/about', (req, res) => {
-  res.send('About route 🎉 ')
-})
-
-app.get('/email', (req, res) => {
-  res.send('Email route 🎉 ')
+  res.send('Hello World of Node online2!')
 })
 
 app.get('/sloth2', (req, res) => {
