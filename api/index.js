@@ -12,12 +12,10 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/email', (req, res) => {
-  sendOfferDetailsEmail();
   res.send('Email route 🎉 ')
 })
 
 app.get('/sloth2', (req, res) => {
-  sendOfferDetailsEmail();
   res.send('Real sloth route 🎉 ')
 })
 
