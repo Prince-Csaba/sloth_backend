@@ -1,4 +1,5 @@
 const express = require('express')
+const { default: sendOfferDetailsEmail } = require('./email/sendEmail')
 const app = express()
 const port = 8000
 
@@ -8,6 +9,11 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.send('About route 🎉 ')
+})
+
+app.get('/email', (req, res) => {
+  sendOfferDetailsEmail();
+  res.send('Email route 🎉 ')
 })
 
 app.listen(port, () => {
