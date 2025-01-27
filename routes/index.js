@@ -1,4 +1,5 @@
 const express = require('express');
+const { createProject } = require('../controllers/createProject');
 const router = express.Router();
 
 //const { getTrips } = require('../controllers/GetAllTrips');
@@ -7,10 +8,7 @@ router.get('/', (req, res) => {
   res.send('Hello Router')
 })
 
-router.post('/projects/new', (req, res) => {
-  res.send('Hello New Project')
-})
 
-//router.get('/alltrips', getTrips);
+router.post('/projects/new', createProject);
 
 module.exports = router;

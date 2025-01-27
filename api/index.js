@@ -5,8 +5,6 @@ const app = express()
 const port = 8000
 const indexRouter = require('../routes/index')
 
-
-
 const cors = require("cors")
 
 const corsOptions ={
