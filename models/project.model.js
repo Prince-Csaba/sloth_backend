@@ -18,9 +18,11 @@ const projectSchema = new mongoose.Schema({
   },
   progress: {
     type: Number,
+    default: 0,
   },
   percentage: {
     type: Number,
+    default: 0,
   },
   priority: {
     type: String,
@@ -31,9 +33,11 @@ const projectSchema = new mongoose.Schema({
   order: {
     type: Number,
   },
-  id: {
+  someid: {
     type: Number,
-    unique: true
+  },
+  user: {
+    type: String,
   }
 });
 
