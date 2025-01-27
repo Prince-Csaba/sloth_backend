@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   res.send('Hello Router')
 })
 
-router.get('/projects/new', (req, res) => {
+router.post('/projects/new', (req, res) => {
   res.send('Hello New Project')
 })
 
