@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
   res.send('Hello Router')
 })
 
-
 router.post('/projects/new', createProject);
 
 module.exports = router;

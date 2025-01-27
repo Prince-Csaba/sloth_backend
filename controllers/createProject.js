@@ -7,7 +7,7 @@ const createProject = async (req, res) => {
     const newProject = new Project(projectData);
     console.log(newProject);
 /*     await newProject.save(); */
-    res.status(201).send(newProject);
+    res.status(201).send("Cool, project created!");
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
