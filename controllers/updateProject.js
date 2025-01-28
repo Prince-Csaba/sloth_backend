@@ -2,7 +2,7 @@ const Project = require('../models/project.model');
 
 const createProject = async (req, res) => {
   try {
-    const projectData = req.body.fetchData;
+    const projectID = req.body.fetchData;
     //console.log(projectData);
     const newProject = new Project(projectData);
     console.log(newProject);
