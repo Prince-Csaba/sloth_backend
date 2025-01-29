@@ -6,7 +6,7 @@ const getUserProjects = async (req, res) => {
   const { user } = req.body;
   console.log(user);
   try {
-    const projects = await Project.find();
+    const projects = await Project.find({ user: user });
     console.log(projects);
     res.status(200).json(projects);
   } catch (error) {
