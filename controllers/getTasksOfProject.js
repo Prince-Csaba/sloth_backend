@@ -1,7 +1,8 @@
 const Task = require("../models/task.model");
 
 const getTasksOfProject = async (req, res) => {
-  const { id } = req.body.id;
+  console.log(req.body);
+  const { id } = req.body;
   console.log(id);
   try {
     const tasks = await Task.find({ project: id });
