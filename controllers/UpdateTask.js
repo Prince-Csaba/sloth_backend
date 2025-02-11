@@ -1,6 +1,6 @@
-const Project = require('../models/project.model');
+const Task = require('../models/task.model');
 
-const createProject = async (req, res) => {
+const updateTask = async (req, res) => {
   try {
     const projectID = req.body.fetchData;
     //console.log(projectData);
@@ -14,4 +14,4 @@ const createProject = async (req, res) => {
   }
 };
 
-module.exports = { createProject };
+module.exports = { updateTask };
