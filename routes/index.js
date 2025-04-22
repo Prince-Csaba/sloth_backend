@@ -19,6 +19,7 @@ router.post('/projects/update', updateProject);
 
 router.post('/tasks/new', createTask);
 router.post('/tasks/getTasksOfProject', getTasksOfProject);
-router.post('/tasks/update', updateTask);
+
+router.patch('/tasks/update/:id', updateTask);
 
 module.exports = router;

@@ -2,10 +2,16 @@ const Task = require('../models/task.model');
 
 const updateTask = async (req, res) => {
   try {
-    const { taskId, updateData } = req.body;
+    const { id } = req.params; // Extract task ID from the URL
+    const updateData = req.body.updateData; // Get the updated fields from the request body
+
+    console.log('Update Task ID:', id);
+    console.log('Update Data:', updateData);
 
     // Find the task by ID and update it with the new data
-    const updatedTask = await Task.findByIdAndUpdate(taskId, updateData, { new: true });
+    const updatedTask = await Task.findOneAndUpdate({ someid: id }, updateData, { new: true });
+
+    console.log('Updated Task:', updatedTask);
 
     if (!updatedTask) {
       return res.status(404).send({ message: 'Task not found' });
