@@ -1,18 +1,20 @@
 const Task = require('../models/task.model');
 
-const createTask = async (req, res) => {
+const deleteTask = async (req, res) => {
   try {
-    console.log(req.body);
-    const taskData = req.body;
-    console.log(taskData);
-    const newTask = new Task(taskData);
-    console.log(newTask);
-    await newTask.save();
-    res.status(201).send(newTask);
+    const id = req.body.taskId;
+    console.log('Delete Task ID:', id);
+    const deletedTask = await Task.findOneAndDelete({ _id: id });
+
+    if (!deletedTask) {
+      return res.status(404).send({ message: 'Task not found' });
+    }
+
+    res.status(200).send({ message: 'Task deleted successfully', deletedTask });
   } catch (error) {
-    console.error('Error saving task:', error);
+    console.error('Error deleting task:', error);
     res.status(400).send({ error: error.message });
   }
 };
 
-module.exports = { createTask };
+module.exports = { deleteTask };
