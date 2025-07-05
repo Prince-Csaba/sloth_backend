@@ -27,9 +27,6 @@ const projectSchema = new mongoose.Schema({
   priority: {
     type: String,
   },
-  active: {
-    type: Boolean,
-  },
   order: {
     type: Number,
   },
@@ -38,7 +35,11 @@ const projectSchema = new mongoose.Schema({
   },
   user: {
     type: String,
-  }
+  },
+  status: {
+    type: String,
+    default: "active",
+  },
 });
 
 const Project = mongoose.model("Project", projectSchema);

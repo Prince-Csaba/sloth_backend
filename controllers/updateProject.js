@@ -1,9 +1,10 @@
 const Project = require('../models/project.model');
 
 const updateProject = async (req, res) => {
+  console.log('Update Project Request:', req.body);
   try {
     const { projectId, updateData } = req.body;
-
+    console.log('Update Project Data:', projectId, updateData);
     // Find the project by ID and update it with the new data
     const updatedProject = await Project.findByIdAndUpdate(projectId, updateData, { new: true });
 
